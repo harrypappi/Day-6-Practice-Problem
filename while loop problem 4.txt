@@ -1,0 +1,29 @@
+#!/bin/bash
+
+money=100
+goal=200
+bet=1
+num_wins=0
+num_bets=0
+
+while (( money > 0 && money < goal )); do
+    (( num_bets++ ))
+    if (( RANDOM % 2 == 0 )); then
+        (( money += bet ))
+        (( num_wins++ ))
+    else
+        (( money -= bet ))
+    fi
+done
+
+echo "Final stats:"
+echo "Money: $money"
+echo "Number of wins: $num_wins"
+echo "Number of bets: $num_bets"
+
+
+
+output: 
+Money: 0
+Number of wins: 2825
+Number of bets: 5750
